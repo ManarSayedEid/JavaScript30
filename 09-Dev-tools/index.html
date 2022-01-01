@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev tools tricks</title>
+</head>
+<body>
+    
+    <p>Manar Sayed</p>
+
+    <script>
+        const family = [
+            {name: 'Lamis', age: 30},
+            {name: 'Ahmed', age: 25}
+        ];
+        const p = document.querySelector('p');
+
+        function makeGreen() {
+            p.style.color = 'green';
+            p.style.fontSize = '5rem';
+        };
+
+        //style console
+        console.log('%c helloooooo', 'font-size:50px; color:pink;');
+
+        // console warn | error | info 
+        console.warn('warning');
+        console.error('errorrr');
+        console.info('info')
+
+        //test
+        console.assert(1==2, 'wrong')
+
+        // view element method
+        console.dir(p);
+
+        // grouping
+        family.forEach((one)=> {
+            console.groupCollapsed(`${one.name}`);
+            console.log(`this is ${one.name}`);
+            console.log(`age: ${one.age}`);
+            console.groupEnd(`${one.name}`);
+        })
+
+        //count
+        console.count('manar');
+        console.count('manar');
+        console.count('manar');
+        console.count('manar');
+
+        //timing
+        console.time('fetch time');
+        fetch('https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json')
+        .then(blob => blob.json())
+        .then(data => console.timeEnd('fetch time'));
+
+        // array of objects
+        console.table(family)
+
+
+        </script>
+</body>
+</html>
