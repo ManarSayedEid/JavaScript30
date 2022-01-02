@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Refrence Vs copy</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5];
+        // let arr2 = arr;
+        // console.log(arr,arr2);
+        // arr2[0] = 999;
+        // console.log(arr,arr2);
+
+        // make copy of array instead
+        arr2 = arr.splice(); // 1
+        arr2 = [...arr]; // 2
+        arr2 = [].concat(arr); // 3
+        arr2 = Array.from(arr); // 4
+        console.log(arr,arr2);
+        arr2[0]=99999999;
+        console.log(arr,arr2);
+
+        let person = {name: 'manar', city: 'Eg'}
+        // make copy of objects
+        let p = Object.assign({}, person, {newprop:'new'}); //1
+        p = {...person, new:'new'} //2
+        console.log(p);
+
+        // one level deep! => nested arrays/objects change in the original obj if changed in its copy
+
+        // cheap way to deep clone
+        p = JSON.parse(JSON.stringify(person));
+      
+
+
+    </script>
+</body>
+</html>
