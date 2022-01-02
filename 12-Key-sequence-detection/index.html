@@ -8,5 +8,21 @@
 </head>
 <body>
     
+    <script>
+        let pressed = [];
+        let secret = 'manar';
+        
+        window.addEventListener('keyup', (e) =>{
+            pressed.push(e.key);
+            // if pressed array larger than secret, remove first index
+            if (pressed.length > secret.length) {
+                pressed = pressed.splice(-secret.length)
+            }
+            console.log(pressed);
+            if (pressed.length === secret.length && pressed.join('') === secret ){
+                console.log('Wohoooooo!')
+            }
+        })
+    </script>
 </body>
 </html>
