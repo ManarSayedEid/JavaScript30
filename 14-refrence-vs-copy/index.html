@@ -32,7 +32,7 @@
         // one level deep! => nested arrays/objects change in the original obj if changed in its copy
 
         // cheap way to deep clone
-        p = JSON.parse(JSON.stringify(person));
+        p = JSON.parse(JSON.stringify(person)); // will not clone date/functions
       
 
 

@@ -18,7 +18,7 @@ function getDate() {
     hours = (hours > 12) ? (hours - 12) : hours;
     const hoursDegree = (hours / 12) * 360;
     const hourHand = document.querySelector('.hour-hand');
-    hourHand.style.transform = `rotate(${hoursDegree + 90}deg)`
+    hourHand.style.transform = `rotate(${hoursDegree + 90}deg)`;
     
     console.log(seconds, minutes, hours);
 }
